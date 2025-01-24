@@ -353,15 +353,16 @@
                         </div>
                     </div>
                     <div class="col">
-                        <form action="">
+                        <form onsubmit="handleFormSubmit(event)">
+                            <input type="hidden" name="access_key" value="34ca4bd8-e2f7-4bef-a959-bc84b1e02ef3">
                             <div class="form-control">
                                 <div class="form-inputs">
-                                    <input type="text" class="input-field" placeholder="Your Name">
-                                    <input type="text" class="input-field" placeholder="Your Email">
+                                    <input type="text" class="input-field" placeholder="Your Name" name="name">
+                                    <input type="text" class="input-field" placeholder="Your Email" name="email">
                                 </div>
                                 <div class="text-area">
-                                    <input type="text" class="input-subject" placeholder="Subject">
-                                    <textarea placeholder="Message"></textarea>
+                                    <input type="text" class="input-subject" placeholder="Subject" name="subject">
+                                    <textarea placeholder="Message" name="message"></textarea>
                                 </div>
                                 <div class="form-button">
                                     <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
