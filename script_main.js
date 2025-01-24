@@ -7,6 +7,31 @@ function myMenuFunction() {
 }
 
 
+// form submitted
+async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form); // Collect form data
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        form.reset(); // Optionally reset the form
+      } else {
+        alert('Failed to submit the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    }
+  }
+
 // dark mode
 
 const body = document.querySelector('body');
